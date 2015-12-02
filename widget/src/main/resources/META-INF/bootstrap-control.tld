@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+		 http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+		version="2.0">
+
+	<tlib-version>1.0</tlib-version>
+	<short-name>widget</short-name>
+	<uri>http://www.cineca.it/widget</uri>
+	
+	<tag-file>
+		<name>bind</name>
+		<path>/META-INF/tags/bootstrap/bind.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>if</name>
+		<path>/META-INF/tags/bootstrap/if.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>selectCore</name>
+		<path>/META-INF/tags/bootstrap/selectCore.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>radioCore</name>
+		<path>/META-INF/tags/bootstrap/radioCore.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>checkboxCore</name>
+		<path>/META-INF/tags/bootstrap/checkboxCore.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>fieldsetCore</name>
+		<path>/META-INF/tags/bootstrap/fieldsetCore.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>divCore</name>
+		<path>/META-INF/tags/bootstrap/divCore.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>tabsCore</name>
+		<path>/META-INF/tags/bootstrap/tabsCore.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>tabCore</name>
+		<path>/META-INF/tags/bootstrap/tabCore.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>hiddenCore</name>
+		<path>/META-INF/tags/bootstrap/hiddenCore.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>textCore</name>
+		<path>/META-INF/tags/bootstrap/textCore.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>textareaCore</name>
+		<path>/META-INF/tags/bootstrap/textareaCore.tag</path>
+	</tag-file>
+
+	<tag-file>
+		<name>error</name>
+		<path>/META-INF/tags/bootstrap/error.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>errorLine</name>
+		<path>/META-INF/tags/bootstrap/errorLine.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>info</name>
+		<path>/META-INF/tags/bootstrap/info.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>infoLine</name>
+		<path>/META-INF/tags/bootstrap/infoLine.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>line</name>
+		<path>/META-INF/tags/bootstrap/line.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>label</name>
+		<path>/META-INF/tags/bootstrap/label.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>select</name>
+		<path>/META-INF/tags/bootstrap/select.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>radio</name>
+		<path>/META-INF/tags/bootstrap/radio.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>checkbox</name>
+		<path>/META-INF/tags/bootstrap/checkbox.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>hidden</name>
+		<path>/META-INF/tags/bootstrap/hidden.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>text</name>
+		<path>/META-INF/tags/bootstrap/text.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>textList</name>
+		<path>/META-INF/tags/bootstrap/textList.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>textarea</name>
+		<path>/META-INF/tags/bootstrap/textarea.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>title</name>
+		<path>/META-INF/tags/bootstrap/title.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>widget</name>
+		<path>/META-INF/tags/bootstrap/widget.tag</path>
+	</tag-file>   
+	<tag-file>
+		<name>widgetCore</name>
+		<path>/META-INF/tags/bootstrap/widgetCore.tag</path>
+	</tag-file>   
+	<tag-file>
+		<name>tree</name>
+		<path>/META-INF/tags/bootstrap/tree.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>facet</name>
+		<path>/META-INF/tags/bootstrap/facet.tag</path>
+	</tag-file>	
+	<tag-file>
+		<name>ellipsis</name>
+		<path>/META-INF/tags/bootstrap/ellipsis.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>truncate</name>
+		<path>/META-INF/tags/bootstrap/truncate.tag</path>
+	</tag-file>	
+	<tag-file>
+		<name>warning</name>
+		<path>/META-INF/tags/bootstrap/warning.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>warningLine</name>
+		<path>/META-INF/tags/bootstrap/warningLine.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>stats</name>
+		<path>/META-INF/tags/bootstrap/stats.tag</path>
+	</tag-file>
+<!--	<tag-file>
+		<name>ajax</name>
+		<path>/META-INF/tags/bootstrap/ajax.tag</path>
+	</tag-file>
+-->
+	<tag>
+		<name>include</name>
+		<tagclass>it.cilea.core.widget.util.WidgetIncludeTag</tagclass>
+		<info>Same as jsp:include</info>
+		<attribute>
+			<name>page</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<function>
+		<description>determine if field is required from Annotations</description>
+		<name>required</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>Boolean required(java.lang.Object,java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>get the maxlength from Annotations</description>
+		<name>maxLength</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>Integer maxLength(java.lang.Object,java.lang.String)</function-signature>
+	</function>
+	
+	 <function>
+		<description>Return object path from object/property path</description>
+		<name>getObjectPath</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>String getObjectFromPropertyPath(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>Return property name from property path.</description>
+		<name>getPropertyName</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>String getPropertyFromPropertyPath(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>get the datatype of an attribute</description>
+		<name>getReturnType</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>Class getReturnType(java.lang.Object,java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>determine if the datatype of an attribute is java.util.Date</description>
+		<name>isDate</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>Boolean isDate(java.lang.Object,java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>get the instance of a field</description>
+		<name>getReferencedObject</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>Object getReferencedObject(java.lang.Object,java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description></description>
+		<name>formatMoney</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>String formatMoney(java.lang.Object)</function-signature>
+	</function>
+	
+	<function>
+		<description></description>
+		<name>formatText</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>String formatText(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description></description>
+		<name>escapeHtml</name>
+		<function-class>org.apache.commons.lang.StringEscapeUtils</function-class>
+		<function-signature>String escapeHtml(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>Controlla se fra le annotations c'è TimeOnlyJsp</description>
+		<name>isTime</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>Boolean isTime(java.lang.Object,java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>Controlla se fra le annotations c'è EuroOnlyJsp</description>
+		<name>isEuro</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>Boolean isEuro(java.lang.Object,java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>Controlla se fra le annotations c'è PercentOnlyJsp</description>
+		<name>isPercent</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>Boolean isPercent(java.lang.Object,java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>Controlla se fra le annotations c'è MoneyOnlyJsp</description>
+		<name>isMoney</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>Boolean isMoney(java.lang.Object,java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>Controlla se fra le annotations c'è MoneyOnlyJsp</description>
+		<name>isMoneyPatternDefault</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>Boolean isMoneyPatternDefault(java.lang.Object,java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>Return property path without id name from property path.</description>
+		<name>getPropertyPathNoId</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>String getPropertyPathNoIdFromPropertyPathId(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>Check if the property is instance of Boolean</description>
+		<name>isBoolean</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>Boolean isBoolean(java.lang.Object,java.lang.String)</function-signature>
+	</function>
+
+	<function>
+		<description>Trova il valore corretto per end label</description>
+		<name>findEndLabel</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>String findEndLabel(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>Prepara l'input per essere usata come stringa in una variabile Javascript</description>
+		<name>escapeForJavascriptString</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>String escapeForJavascriptString(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>Effettua l'encoding di una stringa. Ad esempio trasforma ":" in %3A</description>
+		<name>urlEncode</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>String urlEncode(java.lang.String)</function-signature>
+	</function>
+	
+		<function>
+		<description>Prepara l'input per essere usata come id per Jquery (sostituisce ad es. il punto con \\punto)</description>
+		<name>escapeForJQ</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>String escapeForJQ(java.lang.String)</function-signature>
+	</function>	
+	<function>
+		<description>Prepara l'input per essere usata come stringa in una variabile Javascript e la accorcia</description>
+		<name>substringForJavascript</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>String substringForJavascript(java.lang.String,java.lang.Integer,java.lang.Integer)</function-signature>
+	</function>
+	<function>
+		<description>Check if a widget is not visibile (hidden or serverSide)</description>
+		<name>isInvisibleWidget</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>Boolean isInvisibleWidget(it.cilea.core.widget.model.Widget)</function-signature>
+	</function>
+	<function>
+		<description>Removes a substring only if it is at the end of a source string, otherwise returns the source string.</description>
+		<name>removeEnd</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>String removeEnd(java.lang.String,java.lang.String)</function-signature>
+	</function>
+	<function>
+		<description>getI18nPropertyPath</description>
+		<name>getI18nPropertyPath</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>String getI18nPropertyPath(java.lang.String)</function-signature>
+	</function>
+	<function>
+		<description>calculate months between two dates</description>
+		<name>monthsBetween</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>Integer monthsBetween(java.util.Date,java.util.Date)</function-signature>
+	</function>
+	<function>
+		<description>calculate months between two dates round up</description>
+		<name>monthsBetweenRoundUp</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>Integer monthsBetweenRoundUp(java.util.Date,java.util.Date)</function-signature>
+	</function>
+	<function>
+		<description>isDateBetween(dateToCheck,startDate,endDate)</description>
+		<name>isDateBetween</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>Boolean isDateBetween(java.util.Date,java.util.Date,java.util.Date)</function-signature>
+	</function>
+	<function>
+		<description>removeDoubleSpaces(text)</description>
+		<name>removeDoubleSpaces</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>String removeDoubleSpaces(java.lang.String)</function-signature>
+	</function>
+	<function>
+		<description>collectionOrder(collection,comparatorFqClassName)</description>
+		<name>orderCollection</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>Collection orderCollection(java.util.Collection,java.lang.String)</function-signature>
+	</function>
+	<function>
+		<description>evalScript(script,object)</description>
+		<name>evalScript</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>String evalScript(java.lang.String,java.lang.Object)</function-signature>
+	</function>
+	<function>
+		<description>substringsBetween(str,begin,end)</description>
+		<name>substringsBetween</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>String[] substringsBetween(java.lang.String,java.lang.String,java.lang.String)</function-signature>
+	</function>
+	<function>
+		<description>findPath(str)</description>
+		<name>findPath</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>String[] findPath(java.lang.String)</function-signature>
+	</function>
+	<function>
+		<description>evaluateExpression(test,pageContext)</description>
+		<name>evaluateExpression</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>Object evaluateExpression(java.lang.String,javax.servlet.jsp.PageContext)</function-signature>
+	</function>
+	<function>
+		<description>getMapForMultiple(map,discriminator)</description>
+		<name>getMapForMultiple</name>
+		<function-class>it.cilea.core.widget.util.WidgetTagUtil</function-class>
+		<function-signature>Map getMapForMultiple(java.util.Map,java.lang.String)</function-signature>
+	</function>
+</taglib>

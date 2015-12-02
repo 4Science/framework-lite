@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-bindings xmlns="http://www.eclipse.org/eclipselink/xsds/persistence/oxm"
+	package-name="it.cilea.core.menu.model" xml-mapping-metadata-complete="true">
+	<xml-schema element-form-default="QUALIFIED" />
+	<java-types>
+		<java-type name="TreeNode" xml-accessor-type="NONE">
+			<xml-root-element />
+				<java-attributes>
+					<xml-element java-attribute="id" />
+					<xml-element java-attribute="state" />
+					<xml-element java-attribute="position" />
+					<xml-element java-attribute="identifier" />
+					<xml-element java-attribute="rel" />
+					<xml-element java-attribute="title" />
+					<xml-element java-attribute="childrenList" name="children">
+						<xml-element-wrapper name="childrenList" />
+					</xml-element>
+					<xml-element java-attribute="relativeLink" />
+					<xml-element java-attribute="onclick" />
+					<xml-element java-attribute="link" />					
+					<xml-element java-attribute="additionalInfo" name="additionalInfo">
+						<xml-element-wrapper name="additionalInfo" />
+					</xml-element>
+				</java-attributes>
+		</java-type>
+	</java-types>
+</xml-bindings>

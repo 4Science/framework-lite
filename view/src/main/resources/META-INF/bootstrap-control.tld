@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+		 http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+		version="2.0">
+
+	<tlib-version>1.0</tlib-version>
+	<short-name>view</short-name>
+	<uri>http://www.cineca.it/view</uri>
+	<tag-file>
+		<name>viewBuilder</name>
+		<path>/META-INF/tags/bootstrap/viewBuilder.tag</path>
+	</tag-file>
+	<function>
+		<description>getViewBuilder from identifier</description>
+		<name>get</name>
+		<function-class>it.cilea.core.view.util.ViewTagUtil</function-class>
+		<function-signature>ViewBuilder getViewBuilder(java.lang.String)</function-signature>
+	</function>
+	
+</taglib>

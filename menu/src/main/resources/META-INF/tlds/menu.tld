@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+		 http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+		version="2.0">
+
+	<tlib-version>1.0</tlib-version>
+	<short-name>menu</short-name>
+	<uri>http://www.cineca.it/menu</uri>
+	
+	<tag-file>
+		<name>mbMenu</name>
+		<path>/META-INF/tags/mbMenu.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>mbItem</name>
+		<path>/META-INF/tags/mbItem.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>liMenu</name>
+		<path>/META-INF/tags/liMenu.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>liItem</name>
+		<path>/META-INF/tags/liItem.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>navbarMenu</name>
+		<path>/META-INF/tags/navbarMenu.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>navbarTopMenu</name>
+		<path>/META-INF/tags/navbarTopMenu.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>navbarItem</name>
+		<path>/META-INF/tags/navbarItem.tag</path>
+	</tag-file>	
+	<tag-file>
+		<name>jstree</name>
+		<path>/META-INF/tags/jstree.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>jstree3Menu</name>
+		<path>/META-INF/tags/jstree3Menu.tag</path>
+	</tag-file>
+	<tag-file>
+		<name>jstree3Item</name>
+		<path>/META-INF/tags/jstree3Item.tag</path>
+	</tag-file>
+	<function>
+		<description>Controlla i diritti di accesso secondo la security</description>
+		<name>isVisibleByRole</name>
+		<function-class>it.cilea.core.menu.utils.TreeUtils</function-class>
+		<function-signature>Boolean isVisibleByRole(it.cilea.core.menu.model.TreeNode)</function-signature>
+	</function>
+	
+	<function>
+		<description>Controlla i diritti di accesso secondo il path</description>
+		<name>isVisibleByPath</name>
+		<function-class>it.cilea.core.menu.utils.TreeUtils</function-class>
+		<function-signature>Boolean isVisibleByPath(it.cilea.core.menu.model.TreeNode, java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>Controlla i diritti di accesso secondo regole javascript</description>
+		<name>isVisibleByRules</name>
+		<function-class>it.cilea.core.menu.utils.TreeUtils</function-class>
+		<function-signature>boolean isVisibleByRules(it.cilea.core.menu.model.TreeNode, java.lang.String, javax.servlet.http.HttpServletRequest)</function-signature>
+	</function>
+	
+	<function>
+		<description>Costruisce l'url</description>
+		<name>buildUrl</name>
+		<function-class>it.cilea.core.menu.utils.TreeUtils</function-class>
+		<function-signature>String buildUrl(it.cilea.core.menu.model.TreeNode,javax.servlet.http.HttpServletRequest)</function-signature>
+	</function>
+	
+	<function>
+		<description>verifica se il menu li ha dei figli da visualizzare</description>
+		<name>notEmptyLiMenu</name>
+		<function-class>it.cilea.core.menu.utils.TreeUtils</function-class>
+		<function-signature>boolean notEmptyLiMenu(it.cilea.core.menu.model.TreeNode,java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest)</function-signature>
+	</function>
+</taglib>

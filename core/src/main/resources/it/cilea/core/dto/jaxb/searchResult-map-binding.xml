@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-bindings xmlns="http://www.eclipse.org/eclipselink/xsds/persistence/oxm"
+	package-name="it.cilea.core.dto" xml-mapping-metadata-complete="true">
+	<xml-schema element-form-default="QUALIFIED" />
+	<java-types>
+		<java-type name="SearchResult" xml-accessor-type="NONE">
+			<xml-root-element />						
+			<xml-type prop-order="count page pageSize requestParameters sort sortDir resultList" />
+			<java-attributes>
+				<xml-element java-attribute="count" />
+				<xml-element java-attribute="requestParameters" />
+				<xml-element java-attribute="page" />
+				<xml-element java-attribute="pageSize" />
+				<xml-element java-attribute="sort">
+					<xml-element-wrapper name="sort"/>
+				</xml-element>
+				<xml-element java-attribute="sortDir" />
+				<xml-element java-attribute="resultList" type="java.util.Map" name="item">
+					<xml-element-wrapper name="resultList"/>
+					<xml-java-type-adapter value="it.cilea.core.jaxb.adapter.XmlGenericMapAdapter"/>
+				</xml-element>
+			</java-attributes>
+		</java-type>
+	</java-types>
+</xml-bindings>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings 
+  xmlns="http://java.sun.com/xml/ns/persistence/orm"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_0.xsd"
+  version="2.0">
+	<entity class="it.cilea.core.widget.model.impl.command.CommandAutocompleteWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.command.CommandCheckBoxWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.command.CommandDateWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.command.CommandFileWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.command.CommandHiddenWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.command.CommandHtmlWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.command.CommandRadioWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.command.CommandSelect2Widget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.command.CommandSelectAndMoveWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.command.CommandSelectWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.command.CommandTextAreaWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.command.CommandTextWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.command.CommandTextListWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.command.DisplayTagColumnWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.command.DisplayTagTableWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.command.FragmentWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.core.AutocompleteWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.core.CheckBoxWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.core.DateWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.core.FieldsetWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.core.DivWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.core.HiddenWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.core.HtmlWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.core.IfWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.core.IncludeJspWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.core.InfoLineWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.core.MultiSelectWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.core.RadioWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.core.Select2Widget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.core.SelectAndMoveWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.core.SelectWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.core.ServerSideWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.core.TabsWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.core.TabWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.core.TextAreaWidget" metadata-complete="false"/>
+	<entity class="it.cilea.core.widget.model.impl.core.TextWidget" metadata-complete="false"/>
+</entity-mappings>

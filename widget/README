@@ -1,0 +1,25 @@
+I tag qui presenti sono TUTTI usati e tipicamente hanno i prefissi
+- widget
+
+Per quanto riguarda le funzioni, invece, sono TUTTE usate TRANNE:
+- getReturnType
+- getReferencedObject
+- escapeHtml
+- isBoolean
+
+La seguente funzione, invece, viene usata oltre che nei controlli anche in altri progetti
+- formatMoney (control, WF, BI)
+--
+La seguente funzione, invece, viene usata SOLO in BI
+- replaceValueCilea (usato solo in BI)
+L'ho eliminata: quindi anche la classe ReplaceValue può essere usata direttamente in BI
+
+
+
+
+
+
+
+
+
+

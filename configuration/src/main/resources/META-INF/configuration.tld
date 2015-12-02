@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+		 http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+		version="2.0">
+
+	<tlib-version>1.0</tlib-version>
+	<short-name>config</short-name>
+	<uri>http://www.cineca.it/config</uri>
+	
+	<function>
+		<description>return configuration property value by a key</description>
+		<name>value</name>
+		<function-class>it.cilea.core.configuration.tag.ConfigurationTagUtil</function-class>
+		<function-signature>java.lang.String getValue(java.lang.String)</function-signature>
+	</function>
+	<function>
+		<description>return the replaced string (if string contains ${config.*} it will be replaced by proper value))</description>
+		<name>replace</name>
+		<function-class>it.cilea.core.configuration.tag.ConfigurationTagUtil</function-class>
+		<function-signature>java.lang.String replace(java.lang.String)</function-signature>
+	</function>
+</taglib>

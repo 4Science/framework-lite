@@ -1,0 +1,9 @@
+// $ANTLR 2.7.5 (20050128): grammar.g -> ExpressionParserTokenTypes.txt$
+ExpressionParser    // output token vocab name
+LPAREN=4
+RPAREN=5
+OR=6
+AND=7
+NOT=8
+ALPHA=9
+WS=10

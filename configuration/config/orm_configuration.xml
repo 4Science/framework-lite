@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity-mappings 
+  xmlns="http://java.sun.com/xml/ns/persistence/orm"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_0.xsd"
+  version="2.0">
+
+	<entity class="it.cilea.core.configuration.model.Configuration" metadata-complete="false">
+		<table name="CONFIGURATION" schema="@SCHEMA_CONFIGURATION@" />
+		<attributes>
+			<id name="id">
+				<generated-value strategy="SEQUENCE" generator="@SCHEMA_CONFIGURATION@.CONFIGURATION_SEQ" />
+				<sequence-generator name="@SCHEMA_CONFIGURATION@.CONFIGURATION_SEQ" sequence-name="@SCHEMA_CONFIGURATION@.CONFIGURATION_SEQ" allocation-size="1"/>
+			</id>
+			<many-to-many name="configurationMap">
+				<join-table name="CONFIGURATION_DATA" schema="@SCHEMA_CONFIGURATION@">
+					<join-column name="FK_CONFIGURATION" insertable="true" updatable="true" referenced-column-name="ID"/>
+					<inverse-join-column name="FK_CONFIGURATION_VALUE" insertable="false" updatable="false" />
+				</join-table>
+			</many-to-many>
+			<element-collection name="configurationMap" fetch="LAZY">
+				<map-key-column name="DISCRIMINATOR"/>
+			</element-collection>			
+			<element-collection name="stringMap" fetch="LAZY">
+				<map-key-column name="DISCRIMINATOR"/>
+				<column name="STRING_VALUE"/>
+				<collection-table name="CONFIGURATION_DATA" schema="@SCHEMA_CONFIGURATION@">
+					<join-column name="FK_CONFIGURATION" insertable="true" updatable="true" referenced-column-name="ID"/>
+				</collection-table>
+			</element-collection>
+			<element-collection name="booleanMap" fetch="LAZY">
+				<map-key-column name="DISCRIMINATOR"/>
+				<column name="BOOLEAN_VALUE"/>
+				<collection-table name="CONFIGURATION_DATA" schema="@SCHEMA_CONFIGURATION@">
+					<join-column name="FK_CONFIGURATION" insertable="true" updatable="true" referenced-column-name="ID"/>
+				</collection-table>
+			</element-collection>
+			<element-collection name="integerMap" fetch="LAZY">
+				<map-key-column name="DISCRIMINATOR"/>
+				<column name="INTEGER_VALUE"/>
+				<collection-table name="CONFIGURATION_DATA" schema="@SCHEMA_CONFIGURATION@">
+					<join-column name="FK_CONFIGURATION" insertable="true" updatable="true" referenced-column-name="ID"/>
+				</collection-table>
+			</element-collection>
+			<element-collection name="numberMap" fetch="LAZY">
+				<map-key-column name="DISCRIMINATOR"/>
+				<column name="NUMBER_VALUE"/>
+				<collection-table name="CONFIGURATION_DATA" schema="@SCHEMA_CONFIGURATION@">
+					<join-column name="FK_CONFIGURATION" insertable="true" updatable="true" referenced-column-name="ID"/>
+				</collection-table>
+			</element-collection>
+			<element-collection name="dateMap" fetch="LAZY">
+				<map-key-column name="DISCRIMINATOR"/>
+				<column name="DATE_VALUE"/>
+				<collection-table name="CONFIGURATION_DATA" schema="@SCHEMA_CONFIGURATION@">
+					<join-column name="FK_CONFIGURATION" insertable="true" updatable="true" referenced-column-name="ID"/>
+				</collection-table>
+			</element-collection>
+			<element-collection name="clobMap" fetch="LAZY">
+				<map-key-column name="DISCRIMINATOR"/>
+				<column name="CLOB_VALUE"/>
+				<collection-table name="CONFIGURATION_DATA" schema="@SCHEMA_CONFIGURATION@">
+					<join-column name="FK_CONFIGURATION" insertable="true" updatable="true" referenced-column-name="ID"/>
+				</collection-table>
+			</element-collection>
+			<element-collection name="blobMap" fetch="LAZY">
+				<map-key-column name="DISCRIMINATOR"/>
+				<column name="FK_BLOB_VALUE"/>
+				<collection-table name="CONFIGURATION_DATA" schema="@SCHEMA_CONFIGURATION@">
+					<join-column name="FK_CONFIGURATION" insertable="true" updatable="true" referenced-column-name="ID"/>
+				</collection-table>
+			</element-collection>
+		</attributes>
+	</entity>	
+	<entity class="it.cilea.core.configuration.model.ConfigurationData" metadata-complete="false">
+		<table name="CONFIGURATION_DATA" schema="@SCHEMA_CONFIGURATION@" />
+	</entity>	
+	<entity class="it.cilea.core.configuration.model.ConfigurationLink" metadata-complete="false">
+		<table name="CONFIGURATION_LINK" schema="@SCHEMA_CONFIGURATION@" />
+		<attributes>
+			<id name="id">
+				<generated-value strategy="SEQUENCE" generator="@SCHEMA_CONFIGURATION@.CONFIGURATION_LINK_SEQ" />
+				<sequence-generator name="@SCHEMA_CONFIGURATION@.CONFIGURATION_LINK_SEQ" sequence-name="@SCHEMA_CONFIGURATION@.CONFIGURATION_LINK_SEQ" allocation-size="1"/>
+			</id>
+		</attributes>
+	</entity>	
+	
+</entity-mappings>

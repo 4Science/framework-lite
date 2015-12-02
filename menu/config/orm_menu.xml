@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings 
+  xmlns="http://java.sun.com/xml/ns/persistence/orm"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_0.xsd"
+  version="2.0">
+
+	<entity class="it.cilea.core.menu.model.TreeNode"
+		metadata-complete="false">
+		<table name="TREE_NODE" schema="@SCHEMA_MENU@" />
+		<attributes>
+			<id name="id">
+				<generated-value strategy="SEQUENCE" generator="@SCHEMA_MENU@.TREE_NODE_SEQ" />
+				<sequence-generator name="@SCHEMA_MENU@.TREE_NODE_SEQ" sequence-name="@SCHEMA_MENU@.TREE_NODE_SEQ" allocation-size="1"/>
+			</id>
+		</attributes>	
+	</entity>
+	<entity class="it.cilea.core.menu.model.TreeNodeType"
+		metadata-complete="false">
+		<table name="TREE_NODE_TYPE" schema="@SCHEMA_MENU@" />
+		<attributes>
+			<id name="id">
+				<generated-value strategy="SEQUENCE" generator="@SCHEMA_MENU@.TREE_NODE_TYPE_SEQ" />
+				<sequence-generator name="@SCHEMA_MENU@.TREE_NODE_TYPE_SEQ" sequence-name="@SCHEMA_MENU@.TREE_NODE_TYPE_SEQ" allocation-size="1"/>
+			</id>
+		</attributes>	
+	</entity>
+	
+	<entity class="it.cilea.core.menu.model.TreeNodeDictionary"
+		metadata-complete="false">
+		<table name="TREE_NODE_DICTIONARY" schema="@SCHEMA_MENU@" />
+		<attributes>
+			<id name="id">
+				<generated-value strategy="SEQUENCE" generator="@SCHEMA_MENU@.TREE_NODE_DICTIONARY_SEQ" />
+				<sequence-generator name="@SCHEMA_MENU@.TREE_NODE_DICTIONARY_SEQ" sequence-name="@SCHEMA_MENU@.TREE_NODE_DICTIONARY_SEQ" allocation-size="1"/>
+			</id>
+		</attributes>
+	</entity>
+	
+</entity-mappings>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-bindings xmlns="http://www.eclipse.org/eclipselink/xsds/persistence/oxm"
+	package-name="it.cilea.core.authorization.model.impl" xml-mapping-metadata-complete="true">
+	<xml-schema element-form-default="QUALIFIED" />
+	<java-types>
+		<java-type name="Resource" xml-accessor-type="NONE">
+			<java-attributes>
+				<xml-element java-attribute="displayValue"/>
+				<xml-element java-attribute="note"/>
+				<xml-element java-attribute="identifyingValue"/>
+			</java-attributes>
+		</java-type>
+	</java-types>
+</xml-bindings>

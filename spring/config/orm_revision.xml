@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings 
+  xmlns="http://java.sun.com/xml/ns/persistence/orm"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_0.xsd"
+  version="2.0">
+	<entity class="it.cilea.core.spring.revision.CinecaRevisionEntity" metadata-complete="false">
+		<table name="REVINFO" schema="@SCHEMA_REVISION@" />
+		<attributes>
+			<id name="id">
+				<column name="REV"/>
+				<generated-value strategy="SEQUENCE" generator="@SCHEMA_REVISION@.HIBERNATE_SEQUENCE" />
+				<sequence-generator name="@SCHEMA_REVISION@.HIBERNATE_SEQUENCE" sequence-name="@SCHEMA_REVISION@.HIBERNATE_SEQUENCE" allocation-size="1"/>
+			</id>
+		</attributes>
+	</entity>	
+</entity-mappings>

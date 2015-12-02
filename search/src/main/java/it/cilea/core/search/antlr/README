@@ -1,0 +1,60 @@
+Marzo 2011
+
+ANTLR GRAMMAR
+
+Le classi presenti a questo livello sono generate a partire da grammatiche ANTLR con questo comando:
+
+java -classpath antlr-2.7.5.jar antlr.Tool grammar.g
+
+=============================
+Tutte le grammatiche presenti permettono il parsing di pseudoquery che utilizzano come operatori booleani i caratteri
+&, |, ^
+
+La pseudoquery DEVE essere wrappata in parentesi tonde anche se c'è una sola clause.
+============================
+
+Ci sono diverse versioni di grammatiche:
+
+1- grammatica e artifacts sotto antlr.ascii
+2- grammatica e artifacts sotto antlr.unicode
+3- grammatica e artifacts direttamente sotto antlr
+
+Le prime due grammatiche sono simili dal punto di vista del determinismo lessicale e regole di parsing.
+La differenza fondamentale è che la prima permette l'utilizzo di un subset di char ASCII mentre la seconda acccetta UNICODE.
+Entrambe le grammatiche in questione presentano alcuni problemi descritti nella sezione (KNOWN ISSUES).
+
+La terza grammatica è un'estensione della seconda con l'eliminazione dei problemi presentati nella sezione successiva (KNOWN ISSUES).
+L'approccio seguito con questa grammatica però introduce del non determinismo lessicale.
+Questo, in termini pratici, non dovrebbe inficiare il funzionamento. Andrebbe comunque verificato.
+
+Sarebbe da scrivere una grammatica che permetta di evitare l'utilizzo di operatori come | perché ad esempio in Oracle
+questo operatore serve per la concatenazione.
+
+============
+KNOW ISSUES
+============
+Attenzione che NON è legale l'utilizzo di spazi dopo uno degli operatori se questi sono seguiti da una parentesi
+tonda. Questo perché lo spazio è assimilato ad una parte di un'espressione da valutare e il suo utilizzo 
+indurrebbe il parser a pensare che dopo l'operatore ci sia un'espressione mentre c'è una parentesi
+ES:
+1- (A & B & (C & D)) NON FUNZIONA!!!
+2- (A & B &(C & D)) FUNZIONA
+
+La prima non funziona perché dopo la clausola B c'è & seguita da uno spazio
+e da una parentesi ma questo vuol dire che tra & e la parentesi c'è un'espressione
+Ma questo è errato. Pertanto ogni volta che c'è la necessità di avere delle sottocondizioni 
+(individuate da parentesi) bisogna accertarsi che la tonda aperta sia preceduta SENZA SPAZI
+dall'operatore booleano che si vuole usare!!!!!
+
+Lo stesso ragionamento vale per la parentesi chiuse o aperte nestate. 
+Esempi:
+1A- ((A | B) & C) FUNZIONA
+1B- ( (A | B) & C) NON FUNZIONA!
+
+2A- (C &(A | B)) FUNZIONA
+2A- (C &(A | B) ) NON FUNZIONA!
+ 
+
+Round brackets can be used inside the query ONLY to alter default precedence rules.
+If any round brackets are neede then they must be replaced with squared ones.
+
