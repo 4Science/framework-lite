@@ -66,6 +66,7 @@
 		<commons-httpclient.commons-httpclient.version>3.1</commons-httpclient.commons-httpclient.version>
 		<commons-io.commons-io.version>2.4</commons-io.commons-io.version>
 		<commons-beanutils.version>1.8.3</commons-beanutils.version>
+		<commons-fileupload.version>1.2.1</commons-fileupload.version>
 
 		<javax.mail.version>1.4.5</javax.mail.version>
 		<javax.validation.version>1.0.0.GA</javax.validation.version>
@@ -116,6 +117,7 @@
 		<module>spring</module>
 		<module>widget</module>
 		<module>search</module>
+		<module>sr-api</module>
 		<module>view</module>
 	</modules>
 	<dependencyManagement>
@@ -135,6 +137,11 @@
 				<artifactId>commons-lang</artifactId>
 				<version>${commons-lang.version}</version>
 			</dependency>
+	         <dependency>
+	            <groupId>commons-fileupload</groupId>
+	            <artifactId>commons-fileupload</artifactId>
+	            <version>${commons-fileupload.version}</version>
+	         </dependency>
 			<dependency>
 				<groupId>org.hibernate.javax.persistence</groupId>
 				<artifactId>hibernate-jpa-2.0-api</artifactId>
@@ -531,6 +538,11 @@
 			<dependency>
 				<groupId>it.cineca.dspace.framework</groupId>
 				<artifactId>search</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>it.cineca.dspace.framework</groupId>
+				<artifactId>sr-api</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>

@@ -1,13 +1,5 @@
 package it.cilea.core.widget.model;
 
-import it.cilea.core.configuration.util.ConfigurationUtil;
-import it.cilea.core.model.SelectBaseString;
-import it.cilea.core.model.Selectable;
-import it.cilea.core.widget.WidgetConstant.ParameterType;
-import it.cilea.core.widget.WidgetConstant.WidgetDictionaryType;
-import it.cilea.core.widget.factory.OptionsWidgetPopulateStrategyFactory;
-import it.cilea.core.widget.strategy.options.OptionsWidgetPopulateStrategy;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.constraints.Size;
 
 import org.apache.commons.lang.StringUtils;
+
+import it.cilea.core.configuration.util.ConfigurationUtil;
+import it.cilea.core.model.SelectBaseString;
+import it.cilea.core.model.Selectable;
+import it.cilea.core.widget.WidgetConstant.ParameterType;
+import it.cilea.core.widget.WidgetConstant.WidgetDictionaryType;
+import it.cilea.core.widget.factory.OptionsWidgetPopulateStrategyFactory;
+import it.cilea.core.widget.strategy.options.OptionsWidgetPopulateStrategy;
 
 @Entity
 public abstract class OptionsWidget extends Widget {
@@ -33,6 +33,8 @@ public abstract class OptionsWidget extends Widget {
 	@Transient
 	protected String ajaxUrl;
 
+	@Transient
+	protected Boolean autoDisplay;
 
 	@Transient
 	protected Boolean renderEmptyOption;
@@ -47,16 +49,19 @@ public abstract class OptionsWidget extends Widget {
 	public void init() throws Exception {
 		super.init();
 
+		if (parameterMap.containsKey(ParameterType.AUTO_DISPLAY.name()))
+			autoDisplay = Boolean.valueOf(parameterMap.get(ParameterType.AUTO_DISPLAY.name()).iterator().next());
+
 		if (parameterMap.containsKey(ParameterType.RENDER_EMPTY_OPTION.name()))
-			renderEmptyOption = Boolean.valueOf(parameterMap.get(ParameterType.RENDER_EMPTY_OPTION.name()).iterator()
-					.next());
+			renderEmptyOption = Boolean
+					.valueOf(parameterMap.get(ParameterType.RENDER_EMPTY_OPTION.name()).iterator().next());
 
 		if (renderEmptyOption == null)
 			renderEmptyOption = true;
 
 		if (parameterMap.containsKey(ParameterType.MULTIPLE_SELECTION.name()))
-			multipleSelection = Boolean.valueOf(parameterMap.get(ParameterType.MULTIPLE_SELECTION.name()).iterator()
-					.next());
+			multipleSelection = Boolean
+					.valueOf(parameterMap.get(ParameterType.MULTIPLE_SELECTION.name()).iterator().next());
 
 		if (multipleSelection == null)
 			multipleSelection = false;
@@ -102,7 +107,6 @@ public abstract class OptionsWidget extends Widget {
 		this.populationValue = populationValue;
 	}
 
-
 	public Boolean getRenderEmptyOption() {
 		return renderEmptyOption;
 	}
@@ -147,5 +151,13 @@ public abstract class OptionsWidget extends Widget {
 
 		}
 		return new ArrayList<Selectable>();
+	}
+
+	public Boolean getAutoDisplay() {
+		return autoDisplay;
+	}
+
+	public void setAutoDisplay(Boolean autoDisplay) {
+		this.autoDisplay = autoDisplay;
 	}
 }

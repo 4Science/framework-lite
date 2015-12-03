@@ -20,6 +20,10 @@ public class SelectWidget extends OptionsWidget {
 	@Transient
 	private Boolean renderAsHiddenIfOnlyOneOption;
 
+
+
+	
+
 	@Override
 	public void init() throws Exception {
 		super.init();
@@ -33,7 +37,8 @@ public class SelectWidget extends OptionsWidget {
 
 		if (parameterMap.containsKey(ParameterType.VISIBLE_OPTIONS.name()))
 			size = Integer.valueOf(parameterMap.get(ParameterType.VISIBLE_OPTIONS.name()).iterator().next());
-
+		
+		
 		if (renderAsHiddenIfOnlyOneOption == null)
 			renderAsHiddenIfOnlyOneOption = true;
 

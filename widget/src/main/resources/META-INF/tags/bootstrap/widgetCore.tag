@@ -300,6 +300,7 @@
 				size="${widget.size}" multiple="${widget.multipleSelection}"
 				onchange="" onkeyup="" onmouseover=""
 				readonly=""
+				autoDisplay="${widget.autoDisplay}"
 				type="${fn:replace(widget.widgetType,'command-','')}"
 				/>
 			<c:if test="${not empty widget.parentWidget}">
@@ -393,6 +394,7 @@
 				onchange="" onkeyup="" onmouseover=""
 				readonly=""
 				type="${fn:replace(widget.widgetType,'command-','')}"
+				autoDisplay="${widget.autoDisplay}"
 				/>
 		</c:when>
 		<c:when test="${widget.widgetType eq 'server-side'}">
