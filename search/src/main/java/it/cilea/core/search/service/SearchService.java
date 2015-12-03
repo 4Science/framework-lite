@@ -1,5 +1,11 @@
 package it.cilea.core.search.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import it.cilea.core.model.SelectBase;
 import it.cilea.core.model.SelectBaseString;
 import it.cilea.core.model.Selectable;
@@ -10,14 +16,9 @@ import it.cilea.core.search.SearchConstant.StringMatchType;
 import it.cilea.core.search.dao.SearchBuilderDao;
 import it.cilea.core.search.dao.SearchBuilderWidgetLinkDao;
 import it.cilea.core.search.model.SearchBuilder;
+import it.cilea.core.search.model.SearchBuilderParameter;
 import it.cilea.core.search.model.SearchBuilderWidgetLink;
 import it.cilea.core.spring.util.MessageUtil;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 @Service
 public class SearchService {
@@ -39,6 +40,10 @@ public class SearchService {
 
 	public SearchBuilder saveOrUpdate(SearchBuilder searchBuilder) {
 		return searchBuilderDao.save(searchBuilder);
+	}
+
+	public SearchBuilderParameter saveOrUpdate(SearchBuilderParameter searchBuilderParameter) {
+		return searchBuilderDao.saveParameter(searchBuilderParameter);
 	}
 
 	public void deleteSearchBuilder(Integer searchBuilderId) {
@@ -63,8 +68,8 @@ public class SearchService {
 		SearchBuilderParameterName[] searchBuilderParameterName = SearchConstant.SearchBuilderParameterName.values();
 		List<SelectBaseString> searchBuilderParameterNameList = new ArrayList<SelectBaseString>();
 		for (int i = 0; i < searchBuilderParameterName.length; i++) {
-			searchBuilderParameterNameList.add(new SelectBaseString(searchBuilderParameterName[i].toString(), searchBuilderParameterName[i]
-					.toString()));
+			searchBuilderParameterNameList.add(new SelectBaseString(searchBuilderParameterName[i].toString(),
+					searchBuilderParameterName[i].toString()));
 		}
 		return searchBuilderParameterNameList;
 	}

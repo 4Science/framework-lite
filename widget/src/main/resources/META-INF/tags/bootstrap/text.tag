@@ -172,7 +172,7 @@
 			function addWidgetMultiple${multipleCssClass}(inputId) {
 				$('#'+inputId+'_buttonAdd').toggleClass('hidden');
 				$('#'+inputId+'_buttonRemove').toggleClass('hidden');
-				var url='http://suardi-p.sede.cilea.it:8080/jspui/metadata/newField.ajax';
+				var url='<c:url value="/metadata/field/new.ajax"/>';
 				var prefix='${multipleCssClass}';
 				var lastId=$('.'+prefix).last().attr('id');
 				nextId=Number(lastId.replace(prefix+'_','').replace('__',''))+1;

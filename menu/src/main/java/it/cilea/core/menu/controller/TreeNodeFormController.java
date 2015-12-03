@@ -23,8 +23,8 @@ import it.cilea.core.menu.service.TreeNodeService;
 import it.cilea.core.menu.utils.TreeUtils;
 import it.cilea.core.spring.controller.Spring3CoreController;
 
-@Controller
-@RequestMapping("/fragment/manager/tree/form/index.htm")
+//@Controller
+//@RequestMapping("/fragment/manager/tree/form/index.htm")
 public class TreeNodeFormController extends Spring3CoreController {
 
 	@Autowired
