@@ -281,8 +281,8 @@
 		<c:when test="${not empty activeMultipleButton}">
 			<div class="col-md-8">${controlHtml}</div>
 			<div class="col-md-4">
-				<a id="${inputId}_buttonAdd" class="btn btn-danger<c:if test="${activeMultipleButton=='add'}"> hidden</c:if>" name="" value="<fmt:message key="prompt.widget.remove"/>" onclick="removeWidgetMultiple('${inputId}');"><span class="fa fa-trash-o"></span><fmt:message key="prompt.widget.remove"/></a>
-				<a id="${inputId}_buttonRemove" class="btn btn-default<c:if test="${activeMultipleButton=='remove'}"> hidden</c:if>" name="" value="<fmt:message key="prompt.widget.add"/>" onclick="addWidgetMultiple${multipleCssClass}('${inputId}');"><span class="fa fa-plus"></span><fmt:message key="prompt.widget.add"/></a>
+				<a id="${inputId}_buttonAdd" class="btn btn-danger<c:if test="${activeMultipleButton=='add'}"> hidden</c:if>" name="" value="<fmt:message key="prompt.widget.remove"/>" onclick="removeWidgetMultiple('${inputId}');"><i class="fa fa-trash-o"></i><fmt:message key="prompt.widget.remove"/></a>
+				<a id="${inputId}_buttonRemove" class="btn btn-default<c:if test="${activeMultipleButton=='remove'}"> hidden</c:if>" name="" value="<fmt:message key="prompt.widget.add"/>" onclick="addWidgetMultiple${multipleCssClass}('${inputId}');"><i class="fa fa-plus"></i><fmt:message key="prompt.widget.add"/></a>
 			</div>
 		</c:when>
 		<c:otherwise>${controlHtml}</c:otherwise>

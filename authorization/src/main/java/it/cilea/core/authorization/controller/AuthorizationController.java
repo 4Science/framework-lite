@@ -52,7 +52,7 @@ public class AuthorizationController extends Spring3CoreController {
 	public ModelAndView reload(HttpServletRequest request) throws IOException {
 		AuthorizationUtil.reload(request.getServletContext(), authorizationService);
 		saveMessage(request, messageUtil.findMessage("action.configuration.reload"));
-		return new ModelAndView("redirect:/");
+		return new ModelAndView("redirect:/?CLEAR");
 	}
 
 	@RequestMapping("/getRole/module.json")

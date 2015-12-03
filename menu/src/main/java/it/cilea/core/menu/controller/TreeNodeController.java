@@ -2,7 +2,6 @@ package it.cilea.core.menu.controller;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -45,7 +44,7 @@ public class TreeNodeController extends Spring3CoreController {
 			throws InstantiationException, IllegalAccessException, ClassNotFoundException {
 		MenuUtil.reload(request.getServletContext(), treeNodeService);
 		saveMessage(request, messageUtil.findMessage("action.menu.reload"));
-		return new ModelAndView("redirect:/");
+		return new ModelAndView("redirect:/?CLEAR");
 	}
 
 	@RequestMapping("/menu/reload.fragment")
@@ -305,76 +304,5 @@ public class TreeNodeController extends Spring3CoreController {
 
 	}
 
-	@RequestMapping(value = { "/menu/init" })
-	public ModelAndView init(HttpServletRequest request)
-			throws InstantiationException, IllegalAccessException, ClassNotFoundException {
-		Map<String, TreeNode> map = treeNodeService.getTreeNodeMap();
-		if (!map.containsKey("/module.menu")) {
-			TreeNode treeNode = new TreeNode();
-			treeNode.setIdentifier("/module.menu");
-			treeNodeService.saveOrUpdate(treeNode);
-			map.put(treeNode.getIdentifier(), treeNode);
-		}
-		if (!map.containsKey("/top.menu")) {
-			TreeNode treeNode = new TreeNode();
-			treeNode.setIdentifier("/top.menu");
-			treeNodeService.saveOrUpdate(treeNode);
-			map.put(treeNode.getIdentifier(), treeNode);
-		}
-		if (!map.containsKey("/my.menu")) {
-			TreeNode treeNode = new TreeNode();
-			treeNode.setIdentifier("/my.menu");
-			treeNodeService.saveOrUpdate(treeNode);
-			map.put(treeNode.getIdentifier(), treeNode);
-		}
-		if (!map.containsKey("/module/browse.menu")) {
-			TreeNode treeNode = new TreeNode();
-			treeNode.setIdentifier("/module/browse.menu");
-			treeNode.setBrotherOrder(1);
-			treeNode.setTreeParentNodeId(map.get("/module.menu").getId());
-			treeNodeService.saveOrUpdate(treeNode);
-			map.put(treeNode.getIdentifier(), treeNode);
-		}
-		if (!map.containsKey("/module/browse/community.menu")) {
-			TreeNode treeNode = new TreeNode();
-			treeNode.setIdentifier("/module/browse/community.menu");
-			treeNode.setBrotherOrder(1);
-			treeNode.setTreeParentNodeId(map.get("/module/browse.menu").getId());
-			treeNode.setLink("/${DSPACE_MODULE_NAME}/community/browse.htm?CLEAR");
-			treeNodeService.saveOrUpdate(treeNode);
-			map.put(treeNode.getIdentifier(), treeNode);
-		}
-		if (!map.containsKey("/module/browse/collection.menu")) {
-			TreeNode treeNode = new TreeNode();
-			treeNode.setIdentifier("/module/browse/collection.menu");
-			treeNode.setBrotherOrder(2);
-			treeNode.setTreeParentNodeId(map.get("/module/browse.menu").getId());
-			treeNodeService.saveOrUpdate(treeNode);
-			map.put(treeNode.getIdentifier(), treeNode);
-		}
-		if (!map.containsKey("/module/item.menu")) {
-			TreeNode treeNode = new TreeNode();
-			treeNode.setIdentifier("/module/item.menu");
-			treeNode.setBrotherOrder(2);
-			treeNode.setTreeParentNodeId(map.get("/module.menu").getId());
-			treeNode.setLink("/${DSPACE_MODULE_NAME}/item/list.htm?CLEAR");
-			treeNodeService.saveOrUpdate(treeNode);
-			map.put(treeNode.getIdentifier(), treeNode);
-		}
-		if (!map.containsKey("/top/item/new.menu")) {
-			TreeNode treeNode = new TreeNode();
-			treeNode.setIdentifier("/top/item/new.menu");
-			treeNode.setBrotherOrder(1);
-			treeNode.setTreeParentNodeId(map.get("/top.menu").getId());
-			treeNode.setLink("/${DSPACE_MODULE_NAME}/item/new.htm");
-			treeNode.setVisibilityPath(".*/item/.*");
-			treeNodeService.saveOrUpdate(treeNode);
-			map.put(treeNode.getIdentifier(), treeNode);
-		}
-
-		MenuUtil.reload(request.getServletContext(), treeNodeService);
-		saveMessage(request, messageUtil.findMessage("action.menu.init"));
-		return new ModelAndView("redirect:/");
-	}
-
+	
 }

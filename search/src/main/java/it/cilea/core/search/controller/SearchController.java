@@ -31,7 +31,6 @@ import it.cilea.core.search.SearchConstant;
 import it.cilea.core.search.SearchConstant.SearchBuilderParameterName;
 import it.cilea.core.search.factory.SearchStrategyFactory;
 import it.cilea.core.search.model.SearchBuilder;
-import it.cilea.core.search.model.SearchBuilderParameter;
 import it.cilea.core.search.service.SearchService;
 import it.cilea.core.search.strategy.SearchStrategy;
 import it.cilea.core.search.util.SearchUtil;
@@ -52,7 +51,7 @@ public class SearchController extends Spring3CoreController {
 	public ModelAndView Reload(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		SearchUtil.reload(widgetService, searchService);
 		saveMessage(request, messageUtil.findMessage("action.widget.reload"));
-		return new ModelAndView("redirect:/");
+		return new ModelAndView("redirect:/?CLEAR");
 	}
 
 	@RequestMapping("/search/reload.fragment")
@@ -209,36 +208,6 @@ public class SearchController extends Spring3CoreController {
 
 	public void setWidgetService(WidgetService widgetService) {
 		this.widgetService = widgetService;
-	}
-
-	@RequestMapping(value = { "/search/init" })
-	public ModelAndView init(HttpServletRequest request) throws Exception {
-
-		if (!SearchConstant.searchBuilderMap.containsKey("/item/widgetSearch.htm")) {
-			SearchBuilder searchBuilder = new SearchBuilder();
-			searchBuilder.setName("/item/widgetSearch.htm");
-			searchBuilder.setUrl("/item/widgetSearch.htm");
-			searchBuilder.setFilterClause("1=1");
-			searchBuilder.setView("item/search");
-			searchBuilder.setStrategy(SearchConstant.SearchStrategyType.HQL.name());
-			searchService.saveOrUpdate(searchBuilder);
-			SearchBuilderParameter rootModelClass = new SearchBuilderParameter();
-			rootModelClass.setName(SearchConstant.SearchBuilderParameterName.ROOT_MODEL_CLASS.name());
-			rootModelClass.setValue("org.dspace.content.Item");
-			rootModelClass.setSearchBuilderId(searchBuilder.getId());
-			searchService.saveOrUpdate(rootModelClass);
-			SearchBuilderParameter distinctClause = new SearchBuilderParameter();
-			distinctClause.setName(SearchConstant.SearchBuilderParameterName.DISTINCT_CLAUSE.name());
-			distinctClause.setValue("NO_DISTINCT_CLAUSE");
-			distinctClause.setSearchBuilderId(searchBuilder.getId());
-			searchService.saveOrUpdate(distinctClause);
-			SearchConstant.searchBuilderMap.put(searchBuilder.getUrl(), searchBuilder);
-
-		}
-
-		SearchUtil.reload(widgetService, searchService);
-		saveMessage(request, messageUtil.findMessage("action.search.init"));
-		return new ModelAndView("redirect:/");
 	}
 
 }

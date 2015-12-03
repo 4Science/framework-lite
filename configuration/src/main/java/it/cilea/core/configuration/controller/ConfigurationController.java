@@ -29,7 +29,7 @@ public class ConfigurationController extends Spring3CoreController {
 			throws InstantiationException, IllegalAccessException, ClassNotFoundException {
 		ConfigurationUtil.reload(request.getServletContext(), configurationService);
 		saveMessage(request, messageUtil.findMessage("action.configuration.reload"));
-		return new ModelAndView("redirect:/");
+		return new ModelAndView("redirect:/?CLEAR");
 	}
 
 	@RequestMapping("/configuration/reload.fragment")

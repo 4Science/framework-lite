@@ -38,7 +38,7 @@ public class ViewBuilderController extends Spring3CoreController {
 	public ModelAndView Reload(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ViewUtil.reload(viewService);
 		saveMessage(request, messageUtil.findMessage("action.view.reload"));
-		return new ModelAndView("redirect:/");
+		return new ModelAndView("redirect:/?CLEAR");
 	}
 
 	@RequestMapping("/view/reload.fragment")

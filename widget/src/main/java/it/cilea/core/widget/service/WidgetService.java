@@ -20,6 +20,7 @@ import it.cilea.core.widget.WidgetConstant.OptionsWidgetPopulationType;
 import it.cilea.core.widget.WidgetConstant.WidgetDictionaryType;
 import it.cilea.core.widget.dao.WidgetDao;
 import it.cilea.core.widget.dao.WidgetDictionaryDao;
+import it.cilea.core.widget.model.Parameter;
 import it.cilea.core.widget.model.Widget;
 import it.cilea.core.widget.model.WidgetDictionary;
 
@@ -46,6 +47,10 @@ public class WidgetService {
 
 	public Widget saveOrUpdate(Widget widget) {
 		return widgetDao.save(widget);
+	}
+
+	public Parameter saveOrUpdate(Parameter parameter) {
+		return widgetDao.saveParameter(parameter);
 	}
 
 	public void deleteWidget(Integer widgetId) {

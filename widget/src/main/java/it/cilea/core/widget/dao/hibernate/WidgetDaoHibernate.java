@@ -1,13 +1,5 @@
 package it.cilea.core.widget.dao.hibernate;
 
-import it.cilea.core.model.Selectable;
-import it.cilea.core.spring.dao.hibernate.GenericDaoHibernate;
-import it.cilea.core.widget.dao.WidgetDao;
-import it.cilea.core.widget.model.Parameter;
-import it.cilea.core.widget.model.Widget;
-import it.cilea.core.widget.model.WidgetDictionary;
-import it.cilea.core.widget.model.WidgetLink;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -17,6 +9,14 @@ import java.util.TreeSet;
 
 import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
+
+import it.cilea.core.model.Selectable;
+import it.cilea.core.spring.dao.hibernate.GenericDaoHibernate;
+import it.cilea.core.widget.dao.WidgetDao;
+import it.cilea.core.widget.model.Parameter;
+import it.cilea.core.widget.model.Widget;
+import it.cilea.core.widget.model.WidgetDictionary;
+import it.cilea.core.widget.model.WidgetLink;
 
 @Repository("widgetDao")
 public class WidgetDaoHibernate extends GenericDaoHibernate<Widget, Integer> implements WidgetDao {
@@ -84,6 +84,14 @@ public class WidgetDaoHibernate extends GenericDaoHibernate<Widget, Integer> imp
 			list.add(widgetMap.get(widgetId));
 		return list;
 
+	}
+
+	public Parameter saveParameter(Parameter parameter) {
+		if (parameter.getId() == null) {
+			getSessionFactory().getCurrentSession().save(parameter);
+			return parameter;
+		} else
+			return (Parameter) getSessionFactory().getCurrentSession().merge(parameter);
 	}
 
 }

@@ -48,7 +48,7 @@ public class I18nController extends Spring3CoreController {
 	public ModelAndView reload(HttpServletRequest request) throws Exception {
 		I18nUtil.reload(dynamicMessageSource);
 		saveMessage(request, messageUtil.findMessage("action.i18n.reload"));
-		return new ModelAndView("redirect:/");
+		return new ModelAndView("redirect:/?CLEAR");
 	}
 
 	@RequestMapping("/i18n/reload.fragment")
