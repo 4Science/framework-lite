@@ -123,10 +123,6 @@
 		<path>/META-INF/tags/bootstrap/widgetCore.tag</path>
 	</tag-file>   
 	<tag-file>
-		<name>tree</name>
-		<path>/META-INF/tags/bootstrap/tree.tag</path>
-	</tag-file>
-	<tag-file>
 		<name>facet</name>
 		<path>/META-INF/tags/bootstrap/facet.tag</path>
 	</tag-file>	
@@ -145,10 +141,6 @@
 	<tag-file>
 		<name>warningLine</name>
 		<path>/META-INF/tags/bootstrap/warningLine.tag</path>
-	</tag-file>
-	<tag-file>
-		<name>stats</name>
-		<path>/META-INF/tags/bootstrap/stats.tag</path>
 	</tag-file>
 <!--	<tag-file>
 		<name>ajax</name>

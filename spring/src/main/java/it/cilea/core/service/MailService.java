@@ -1,8 +1,5 @@
 package it.cilea.core.service;
 
-import it.cilea.core.CoreConstant;
-import it.cilea.core.model.Attach;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -20,17 +17,20 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
 
+import it.cilea.core.CoreConstant;
+import it.cilea.core.model.Attach;
+
 @Component
 public class MailService {
 	private static final Logger log = LoggerFactory.getLogger(MailService.class);
-	@Autowired
+	@Autowired(required = false)
 	private JavaMailSenderImpl mailSender;
 
 	public void send(String from, String[] to, String[] cc, String[] bcc, String subject, String text,
 			Set<Attach> attachSet, Boolean html) {
 
-		log.info("\n\nmailSender: getHost: " + mailSender.getHost() + " getPassword: " + mailSender.getPassword()
-				+ " " + " getPort: " + mailSender.getPort() + " " + " getUsername: " + mailSender.getUsername());
+		log.info("\n\nmailSender: getHost: " + mailSender.getHost() + " getPassword: " + mailSender.getPassword() + " "
+				+ " getPort: " + mailSender.getPort() + " " + " getUsername: " + mailSender.getUsername());
 
 		log.info("\nfrom: " + from + " to: " + to + " sub" + subject + "\n\ntext: " + text);
 
@@ -88,8 +88,6 @@ public class MailService {
 
 		this.send(from, to, cc, null, subject, text);
 	}
-	
-	
 
 	public JavaMailSenderImpl getMailSender() {
 		return mailSender;
