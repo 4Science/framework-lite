@@ -26,7 +26,7 @@ import it.cilea.core.util.HttpUtil;
 import it.cilea.core.util.MessageUtilConstant;
 
 @Controller
-@RequestMapping({ "/i18n/", "/frame/i18n/" })
+@RequestMapping({ "/i18n", "/frame/i18n" })
 public class I18nController extends Spring3CoreController {
 
 	private static final Logger log = LoggerFactory.getLogger(I18nController.class);
@@ -44,14 +44,14 @@ public class I18nController extends Spring3CoreController {
 		this.i18nService = i18nService;
 	}
 
-	@RequestMapping(value = { "/i18n/reload" })
+	@RequestMapping(value = { "/reload" })
 	public ModelAndView reload(HttpServletRequest request) throws Exception {
 		I18nUtil.reload(dynamicMessageSource);
 		saveMessage(request, messageUtil.findMessage("action.i18n.reload"));
 		return new ModelAndView("redirect:/?CLEAR");
 	}
 
-	@RequestMapping("/i18n/reload.fragment")
+	@RequestMapping("/reload.fragment")
 	public void reload(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		I18nUtil.reload(dynamicMessageSource);
 		response.getWriter().println("<html>ok</html>");
@@ -73,7 +73,7 @@ public class I18nController extends Spring3CoreController {
 		}
 	}
 
-	@RequestMapping(value = { "delete.htm" })
+	@RequestMapping(value = { "/delete.htm" })
 	public ModelAndView delete(@RequestParam String i18nId, HttpServletRequest request) {
 		// i18nService.deleteI18n(i18nId);
 		i18nService.deleteObjectI18n(i18nId);
@@ -81,7 +81,7 @@ public class I18nController extends Spring3CoreController {
 		return new ModelAndView(getControllerLogic(request.getServletPath()).getViewSuccess());
 	}
 
-	@RequestMapping(value = { "administrative/start.fragment" })
+	@RequestMapping(value = { "/administrative/start.fragment" })
 	public void administrativeStart(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		log.info("I18n administrative start " + getUser().getUsername());
 
@@ -99,7 +99,7 @@ public class I18nController extends Spring3CoreController {
 		response.getWriter().println("<html>ok</html>");
 	}
 
-	@RequestMapping(value = { "administrative/stop.fragment" })
+	@RequestMapping(value = { "/administrative/stop.fragment" })
 	public void administrativeStop(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		log.info("I18n administrative stop " + getUser().getUsername());
 
